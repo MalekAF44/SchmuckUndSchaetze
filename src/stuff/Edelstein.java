@@ -3,8 +3,8 @@ package stuff;
 public interface Edelstein {
 
     /**
-     * Das Gewicht des Edelsteins in Katat (ein Karat entspricht ca. 0.2g).
-     * @return Sinvoll sind nur Werte zwischen 1 und 3000
+     * Das Gewicht des Edelsteins in Karat (ein Karat entspricht ca. 0.2g).
+     * @return Sinnvoll sind nur Werte zwischen 1 und 3000
      */
     public int getGewichtInKarat();
 
