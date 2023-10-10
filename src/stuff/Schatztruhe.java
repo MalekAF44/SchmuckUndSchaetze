@@ -13,16 +13,7 @@ import java.util.Set;
 public class Schatztruhe {
 
 
-    public static void main(String[] args) {
 
-
-        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
-
-        for (Schmuck schmuck : schatz) {
-
-            System.out.println(schmuck.getBezeichnung());
-        }
-    }
 
 
     public static Collection<Schmuck> getSchatz(){
