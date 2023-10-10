@@ -1,9 +1,12 @@
 package schmuckstuecke;
 
+import Edelsteine.Blutdiamant;
+import Edelsteine.Onyx;
 import stuff.Edelstein;
 import stuff.Material;
 import stuff.Schmuck;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Armreif implements Schmuck {
@@ -19,7 +22,7 @@ public class Armreif implements Schmuck {
 
     @Override
     public int getMaterialGewicht() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -29,7 +32,10 @@ public class Armreif implements Schmuck {
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
-        return null;
+        ArrayList<Edelstein> edelsteine = new ArrayList<>();
+        Onyx onyxdiamant = new Onyx();
+        edelsteine.add(onyxdiamant);
+        return edelsteine;
     }
 
     @Override
