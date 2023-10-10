@@ -18,4 +18,9 @@ public class Halskette implements Edelstein {
     public int getWert() {
         return 4000;
     }
+    // test
+
+
+    public Halskette() {
+    }
 }
