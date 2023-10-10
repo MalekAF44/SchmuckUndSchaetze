@@ -28,9 +28,6 @@ public class Halskette implements Schmuck {
         return 0;
     }
 
-    public Halskette() {
-    }
-
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
         return null;
