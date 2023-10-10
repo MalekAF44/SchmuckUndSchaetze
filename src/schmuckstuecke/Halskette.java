@@ -2,25 +2,39 @@ package schmuckstuecke;
 
 import stuff.Edelstein;
 import stuff.EdelsteinTyp;
+import stuff.Material;
+import stuff.Schmuck;
 
-public class Halskette implements Edelstein {
+import java.util.Collection;
+
+public class Halskette implements Schmuck {
     @Override
-    public int getGewichtInKarat() {
-        return 5;
+    public String getBezeichnung() {
+        return null;
     }
 
     @Override
-    public EdelsteinTyp getTyp() {
-        return EdelsteinTyp.DIAMANT;
+    public Material getMaterial() {
+        return null;
     }
 
     @Override
-    public int getWert() {
-        return 4000;
+    public int getMaterialGewicht() {
+        return 0;
     }
-    // test
 
+    @Override
+    public int getKatalognummer() {
+        return 0;
+    }
 
-    public Halskette() {
+    @Override
+    public Collection<Edelstein> getVerbauteEdelsteine() {
+        return null;
+    }
+
+    @Override
+    public int getGesamtwertInEuro() {
+        return 0;
     }
 }
