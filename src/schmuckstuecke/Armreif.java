@@ -6,34 +6,34 @@ import stuff.Schmuck;
 
 import java.util.Collection;
 
-public class RiotAnhaenger implements Schmuck {
+public class Armreif implements Schmuck {
     @Override
     public String getBezeichnung() {
-        return "Riot Gun Buddy";
+        return "Armreif von Queen-Elizabeth";
     }
 
     @Override
     public Material getMaterial() {
-        return Material.BLECH;
+        return Material.GOLD;
     }
 
     @Override
     public int getMaterialGewicht() {
-        return 0;
+        return 2;
     }
 
     @Override
     public int getKatalognummer() {
-        return 56876;
+        return 5;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
-        return ;
+        return null;
     }
 
     @Override
     public int getGesamtwertInEuro() {
-        return 5000;
+        return 0;
     }
 }
