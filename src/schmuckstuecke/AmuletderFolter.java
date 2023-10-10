@@ -1,40 +1,47 @@
 package schmuckstuecke;
 
+import Edelsteine.Blutdiamant;
+import Edelsteine.Zenyte;
 import stuff.Edelstein;
 import stuff.EdelsteinTyp;
 import stuff.Material;
 import stuff.Schmuck;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
-public class Halskette implements Schmuck {
+public class AmuletderFolter implements Schmuck{
+
     @Override
     public String getBezeichnung() {
-        return null;
+        return "Das Amulett der Folter verleiht dem Träger die Macht der Folter-Techniken";
     }
 
     @Override
     public Material getMaterial() {
-        return null;
+        return Material.KATZENGOLD;
     }
 
     @Override
     public int getMaterialGewicht() {
-        return 0;
+        return 100;
     }
 
     @Override
     public int getKatalognummer() {
-        return 0;
+        return 44;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
-        return null;
+        ArrayList<Edelstein> edelsteine = new ArrayList<>();
+        Zenyte zenyte = new Zenyte();
+        edelsteine.add(zenyte);
+        return edelsteine;
     }
 
     @Override
     public int getGesamtwertInEuro() {
-        return 0;
+        return 12500000;
     }
 }
