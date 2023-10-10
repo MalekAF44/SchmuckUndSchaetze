@@ -8,7 +8,7 @@ import java.awt.*;
 public enum EdelsteinTyp {
 
     DIAMANT(Color.WHITE),
-    SAPHIR(Color.RED),
+    SAPHIR(Color.BLUE),
     SMARAGD(Color.GREEN),
     AMETHYST(Color.MAGENTA),
     RUBIN(Color.RED);
