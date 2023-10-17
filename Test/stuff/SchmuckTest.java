@@ -67,12 +67,12 @@ public class SchmuckTest {
                     int katalognummer2 = schmuck2.getKatalognummer();
 
                     if (katalognummer1 == katalognummer2) {
-                        return false; // Es gibt eine nicht-eindeutige Katalognummer.
+                        return false;
                     }
                 }
             }
         }
 
-        return true; // Alle Katalognummern sind eindeutig.
+        return true;
     }
 }
