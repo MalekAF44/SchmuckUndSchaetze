@@ -21,6 +21,29 @@ public class SchmuckTest {
 
     @Test
     public void getMaterial() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+
+        for (Schmuck schmuck : schatz) {
+            Material material = schmuck.getMaterial();
+            assertNotNull("Bei " + schmuck.getClass().getName() + " ist Material null", material);
+
+        }
+
+    }
+
+    @Test
+    public void edelsteineGetWert() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+        for (Schmuck schmuck : schatz) {
+            for(Edelstein edelstein : schmuck.getVerbauteEdelsteine()){
+
+                Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist Wertlos",edelstein.getWert() > 0);
+
+            }
+        }
+
     }
 
 
