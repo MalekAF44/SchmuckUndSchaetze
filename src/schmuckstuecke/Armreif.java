@@ -40,6 +40,14 @@ public class Armreif implements Schmuck {
 
     @Override
     public int getGesamtwertInEuro() {
-        return 0;
+        int i = 0;
+        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
+            i += edelstein.getWert();
+        }
+
+        Material material = getMaterial();
+        i += material.getPreisProGramm() * getMaterialGewicht();//rechnet den wert vom material oben drauf
+
+        return i;
     }
 }

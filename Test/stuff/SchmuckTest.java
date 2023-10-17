@@ -25,6 +25,21 @@ public class SchmuckTest {
     }
 
     @Test
+    public void gesamtWertTest(){
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+        for (Schmuck schmuck : schatz) {
+            int i = 0;
+
+            for(Edelstein edelstein : schmuck.getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
+                i += edelstein.getWert();
+            }
+            i += schmuck.getMaterial().getPreisProGramm()* schmuck.getMaterialGewicht();//rechnet das materialgewicht drauf
+
+        Assert.assertTrue("Der Schmuck " + schmuck.getClass().getName() + " ist nicht richtig",i == schmuck.getGesamtwertInEuro());
+
+        }
+    }
+    @Test
     public void edelsteineGetWert() {
 
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
