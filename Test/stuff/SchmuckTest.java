@@ -21,5 +21,20 @@ public class SchmuckTest {
 
     @Test
     public void getMaterial() {
+
+    }
+
+    @Test
+    public void edelsteineGetWert() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+        for (Schmuck schmuck : schatz) {
+            for(Edelstein edelstein : schmuck.getVerbauteEdelsteine()){
+
+                Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist Wertlos",edelstein.getWert() > 0);
+
+            }
+        }
+
     }
 }
