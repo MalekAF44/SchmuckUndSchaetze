@@ -80,7 +80,14 @@ public class EheRingVonKoenig implements Schmuck {
 
     @Override
     public int getGesamtwertInEuro() {
+        int i = 0;
+        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
+            i += edelstein.getWert();
+        }
 
-        return 50000;
+        Material material = getMaterial();
+        i += material.getPreisProGramm() * getMaterialGewicht();//rechnet den wert vom material oben drauf
+
+        return i;
     }
 }
