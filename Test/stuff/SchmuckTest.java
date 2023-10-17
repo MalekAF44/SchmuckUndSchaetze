@@ -63,7 +63,7 @@ public class SchmuckTest {
             int katalognummer1 = schmuck1.getKatalognummer();
 
             for (Schmuck schmuck2 : schatz) {
-                if (schmuck1 != schmuck2) {
+                if (!schmuck1.equals(schmuck2)) {
                     int katalognummer2 = schmuck2.getKatalognummer();
 
                     if (katalognummer1 == katalognummer2) {
