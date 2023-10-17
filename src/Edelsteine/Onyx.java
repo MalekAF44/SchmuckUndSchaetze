@@ -16,6 +16,6 @@ public class Onyx implements Edelstein {
 
     @Override
     public int getWert() {
-        return 0;
+        return 737283;
     }
 }
