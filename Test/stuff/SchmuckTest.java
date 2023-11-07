@@ -128,4 +128,6 @@ public class SchmuckTest {
             Assert.assertTrue("Der Gesamtwert von " + schmuck.getClass().getName() + " ist zu hoch: " + gesamtwertInEuro, gesamtwertInEuro <= 10000000);
         }
     }
+
+
 }
