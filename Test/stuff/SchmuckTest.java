@@ -32,6 +32,24 @@ public class SchmuckTest {
         }
 
     }
+    @Test
+    public void edelsteineGetGewicht() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+
+        for (Schmuck schmuck : schatz) {
+            Assert.assertNotNull("verbaute Edelsteine sind null in " + schmuck.getBezeichnung(), schmuck.getVerbauteEdelsteine());
+
+            if(!schmuck.getVerbauteEdelsteine().isEmpty()) {
+                for (Edelstein edelstein : schmuck.getVerbauteEdelsteine()) {
+
+                    Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist gewichtslos", edelstein.getGewichtInKarat() > 0);
+
+                }
+            }
+        }
+
+    }
 
     @Test
     public void gesamtWertTest(){
@@ -97,16 +115,16 @@ public class SchmuckTest {
     public void getGesamtwertInEuro() {
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
 
-        // Durchlaufe alle Schmuckstücke
+        // durchlaufe alle Schmuckstücke
         for (Schmuck schmuck : schatz) {
 
             // Ruft Methode getGesamtwertInEuro für das aktuelle Schmuckstück auf
             int gesamtwertInEuro = schmuck.getGesamtwertInEuro();
 
-            // Überprüfe, ob der Gesamtwert mindestens 1000 Euro beträgt
+            // überprüfe, ob Gesamtwert mindestens 1000 € beträgt
             Assert.assertTrue("Der Gesamtwert von " + schmuck.getClass().getName() + " ist negativ oder zu niedrig: " + gesamtwertInEuro, gesamtwertInEuro >= 1000);
 
-            //Überprüfe, ob der Gesamtwert nicht mehr als 10 Millionen Euro beträgt
+            // +berprüfe, ob Gesamtwert nicht mehr als 10mio € beträgt
             Assert.assertTrue("Der Gesamtwert von " + schmuck.getClass().getName() + " ist zu hoch: " + gesamtwertInEuro, gesamtwertInEuro <= 10000000);
         }
     }
