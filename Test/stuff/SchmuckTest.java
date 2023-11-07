@@ -31,6 +31,24 @@ public class SchmuckTest {
         }
 
     }
+    @Test
+    public void edelsteineGetGewicht() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+
+        for (Schmuck schmuck : schatz) {
+            Assert.assertNotNull("verbaute Edelsteine sind null in " + schmuck.getBezeichnung(), schmuck.getVerbauteEdelsteine());
+
+            if(!schmuck.getVerbauteEdelsteine().isEmpty()) {
+                for (Edelstein edelstein : schmuck.getVerbauteEdelsteine()) {
+
+                    Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist gewichtslos", edelstein.getGewichtInKarat() > 0);
+
+                }
+            }
+        }
+
+    }
 
     @Test
     public void gesamtWertTest(){
