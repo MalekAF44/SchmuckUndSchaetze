@@ -96,9 +96,16 @@ public class SchmuckTest {
     public void getGesamtwertInEuro() {
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
 
+        // Durchlaufe alle Schmuckstücke
         for (Schmuck schmuck : schatz) {
+
+            // Ruft Methode getGesamtwertInEuro für das aktuelle Schmuckstück auf
             int gesamtwertInEuro = schmuck.getGesamtwertInEuro();
+
+            // Überprüfe, ob der Gesamtwert mindestens 1000 Euro beträgt
             Assert.assertTrue("Der Gesamtwert von " + schmuck.getClass().getName() + " ist negativ oder zu niedrig: " + gesamtwertInEuro, gesamtwertInEuro >= 1000);
+
+            //Überprüfe, ob der Gesamtwert nicht mehr als 10 Millionen Euro beträgt
             Assert.assertTrue("Der Gesamtwert von " + schmuck.getClass().getName() + " ist zu hoch: " + gesamtwertInEuro, gesamtwertInEuro <= 10000000);
         }
     }
