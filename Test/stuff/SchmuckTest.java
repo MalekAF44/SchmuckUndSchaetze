@@ -37,11 +37,12 @@ public class SchmuckTest {
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
         for (Schmuck schmuck : schatz) {
             int i = 0;
+            Assert.assertNotNull("Die edelsteine in " + schmuck.getBezeichnung() + " sind Null und nicht 0!", schmuck.getVerbauteEdelsteine());
+                for (Edelstein edelstein : schmuck.getVerbauteEdelsteine()) {//rechnet den Wert aller Edelsteine zusammen
+                    i += edelstein.getWert();
+                }
+                i += schmuck.getMaterial().getPreisProGramm() * schmuck.getMaterialGewicht();//rechnet das materialgewicht drauf
 
-            for(Edelstein edelstein : schmuck.getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
-                i += edelstein.getWert();
-            }
-            i += schmuck.getMaterial().getPreisProGramm()* schmuck.getMaterialGewicht();//rechnet das materialgewicht drauf
 
         Assert.assertTrue("Der Schmuck " + schmuck.getClass().getName() + " ist nicht richtig",i == schmuck.getGesamtwertInEuro());
 
