@@ -16,7 +16,7 @@ public class SchmuckTest {
 
         for (Schmuck schmuck : schatz) {
             Assert.assertNotNull("Die Bezeichnung von " + schmuck.getClass().getName() + " ist null", schmuck.getBezeichnung());
-            Assert.assertTrue("Die bezeichnung bei" + schmuck.getClass().getName() + " ist nicht richtig",schmuck.getBezeichnung().length() > 3);
+            Assert.assertTrue("Die bezeichnung bei" + schmuck.getClass().getName() + "hat zu wenige Zeichen",schmuck.getBezeichnung().length() > 3);
         }
     }
 
