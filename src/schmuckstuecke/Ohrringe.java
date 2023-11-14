@@ -1,34 +1,44 @@
 package schmuckstuecke;
 
-import Edelsteine.Blutdiamant;
 import Edelsteine.Onyx;
 import stuff.Edelstein;
+import stuff.EdelsteinTyp;
 import stuff.Material;
 import stuff.Schmuck;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Armreif implements Schmuck {
+public class Ohrringe implements Schmuck {
+    private Material material;
+    private int materialGewicht;
+
+    public Ohrringe() {
+        this.material = Material.GOLD;
+        this.materialGewicht = 10;
+    }
+
+
+
     @Override
     public String getBezeichnung() {
-        return "Armreif von Queen-Elizabeth";
+        return "Ohrringe";
     }
 
     @Override
     public Material getMaterial() {
-        return Material.GOLD;
+        return material;
     }
 
     @Override
     public int getMaterialGewicht() {
 
-        return 5;
+        return 10;
     }
 
     @Override
     public int getKatalognummer() {
-        return 5;
+        return 3399;
     }
 
     @Override
@@ -41,14 +51,10 @@ public class Armreif implements Schmuck {
 
     @Override
     public int getGesamtwertInEuro() {
-        int i = 0;
-        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
-            i += edelstein.getWert();
+        int gesamtwert = 0;
+        for (Edelstein edelstein : getVerbauteEdelsteine()) {
+            gesamtwert += edelstein.getWert();
         }
-
-        Material material = getMaterial();
-        i += material.getPreisProGramm() * getMaterialGewicht();//rechnet den wert vom material oben drauf
-
-        return i;
+        return gesamtwert;
     }
 }

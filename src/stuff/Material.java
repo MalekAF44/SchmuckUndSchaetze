@@ -20,10 +20,14 @@ public enum Material {
     }
 
     public boolean isIstEdel() {
+
         return istEdel;
     }
 
     public int getPreisProGramm() {
+
         return preisProGramm;
     }
+
+
 }

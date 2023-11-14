@@ -9,10 +9,13 @@ import stuff.Schmuck;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Armreif implements Schmuck {
+public class Ring implements Schmuck {
+
+    private double durchmesser;
+
     @Override
     public String getBezeichnung() {
-        return "Armreif von Queen-Elizabeth";
+        return "Ring";
     }
 
     @Override
@@ -23,32 +26,27 @@ public class Armreif implements Schmuck {
     @Override
     public int getMaterialGewicht() {
 
-        return 5;
-    }
+           return 50;
+        }
+
 
     @Override
     public int getKatalognummer() {
-        return 5;
+        return 2277;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
+
         ArrayList<Edelstein> edelsteine = new ArrayList<>();
-        Onyx onyxdiamant = new Onyx();
-        edelsteine.add(onyxdiamant);
+        Blutdiamant blutdiamant = new Blutdiamant();
+        edelsteine.add(blutdiamant);
         return edelsteine;
     }
 
     @Override
     public int getGesamtwertInEuro() {
-        int i = 0;
-        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
-            i += edelstein.getWert();
-        }
-
-        Material material = getMaterial();
-        i += material.getPreisProGramm() * getMaterialGewicht();//rechnet den wert vom material oben drauf
-
-        return i;
+        return 1600;
     }
 }
+

@@ -83,6 +83,17 @@ public class SchmuckTest {
 
 
     @Test
+    public void getMaterialGewicht() {
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+
+        for (Schmuck schmuck : schatz) {
+            int materialGewicht = schmuck.getMaterialGewicht();
+            Assert.assertTrue("Bei " + schmuck.getClass().getName() + " ist Materialgewicht nicht positiv", materialGewicht > 0);
+        }
+    }
+
+
+        @Test
     public void getKatalognummer() {
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
 
