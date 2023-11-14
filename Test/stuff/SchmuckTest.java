@@ -67,19 +67,38 @@ public class SchmuckTest {
 
         }
     }
-    @Test
+
+
+//    @Test
+//    public void edelsteineGetWert() {
+//
+//        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+//        for (Schmuck schmuck : schatz) {
+//            for(Edelstein edelstein : schmuck.getVerbauteEdelsteine()){
+//
+//                Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist Wertlos",edelstein.getWert() > 0);
+//
+//            }
+//        }
+//
+//    }
+
     public void edelsteineGetWert() {
 
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
-        for (Schmuck schmuck : schatz) {
-            for(Edelstein edelstein : schmuck.getVerbauteEdelsteine()){
 
-                Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist Wertlos",edelstein.getWert() > 0);
+        for (Schmuck schmuck : schatz) {
+            for (Edelstein edelstein : schmuck.getVerbauteEdelsteine()) {
+
+                // edelstein.getWert() nicht null ist und größer als 0 ist.
+                Assert.assertNotNull("Der Edelstein ist null", edelstein);
+                Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist wertlos", edelstein.getWert() > 0);
 
             }
         }
-
     }
+
+
 
 
     @Test
