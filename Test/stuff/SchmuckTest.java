@@ -16,6 +16,7 @@ public class SchmuckTest {
 
         for (Schmuck schmuck : schatz) {
             Assert.assertNotNull("Die Bezeichnung von " + schmuck.getClass().getName() + " ist null", schmuck.getBezeichnung());
+            Assert.assertTrue("Die bezeichnung bei" + schmuck.getClass().getName() + " ist nicht richtig",schmuck.getBezeichnung().length() > 3);
         }
     }
 
@@ -28,6 +29,24 @@ public class SchmuckTest {
             Material material = schmuck.getMaterial();
             assertNotNull("Bei " + schmuck.getClass().getName() + " ist Material null", material);
 
+        }
+
+    }
+    @Test
+    public void edelsteineGetGewicht() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+
+        for (Schmuck schmuck : schatz) {
+            Assert.assertNotNull("verbaute Edelsteine sind null in " + schmuck.getBezeichnung(), schmuck.getVerbauteEdelsteine());
+
+            if(!schmuck.getVerbauteEdelsteine().isEmpty()) {
+                for (Edelstein edelstein : schmuck.getVerbauteEdelsteine()) {
+
+                    Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist gewichtslos", edelstein.getGewichtInKarat() > 0);
+
+                }
+            }
         }
 
     }
@@ -120,4 +139,6 @@ public class SchmuckTest {
             Assert.assertTrue("Der Gesamtwert von " + schmuck.getClass().getName() + " ist zu hoch: " + gesamtwertInEuro, gesamtwertInEuro <= 10000000);
         }
     }
+
+
 }
