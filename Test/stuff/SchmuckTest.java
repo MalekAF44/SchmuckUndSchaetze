@@ -3,50 +3,104 @@ package stuff;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import static org.junit.Assert.*;
 
 public class SchmuckTest {
+    private String listToString(ArrayList<Schmuck> fehler){
+        StringBuilder ausgabe = new StringBuilder();
+        for (Schmuck schmuck:fehler) {
+            ausgabe.append(" ").append(schmuck.getClass().getName()).append(", ");
+        }
+        return ausgabe.toString();
+    }
+    private String listToStringEdel(ArrayList<Edelstein> fehler){
+        StringBuilder ausgabe = new StringBuilder();
+        for (Edelstein edelstein:fehler) {
+            ausgabe.append(" ").append(edelstein.getClass().getName()).append(", ");
+        }
+        return ausgabe.toString();
+    }
 
     @Test
-    public void getBezeichnung() {
+    public void getBezeichnungNull() {
 
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
 
+        ArrayList<Schmuck> fehler = new ArrayList<>();
         for (Schmuck schmuck : schatz) {
-            Assert.assertNotNull("Die Bezeichnung von " + schmuck.getClass().getName() + " ist null", schmuck.getBezeichnung());
-            Assert.assertTrue("Die bezeichnung bei" + schmuck.getClass().getName() + " hat zu wenige Zeichen",schmuck.getBezeichnung().length() > 3);
+            if (schmuck.getBezeichnung() == null){
+                fehler.add(schmuck);
+            }
+
         }
+        Assert.assertTrue("die folgenden Schmuckstücke haben als Bezeichnung Null: "+ listToString(fehler),fehler.isEmpty());
+    }
+
+    @Test
+    public void getBezeichnungZuKurz() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+
+        ArrayList<Schmuck> fehlerLen = new ArrayList<>();
+        for (Schmuck schmuck : schatz) {
+
+            if (schmuck.getBezeichnung() != null && schmuck.getBezeichnung().length() < 3){
+                fehlerLen.add(schmuck);
+            }
+
+        }
+        Assert.assertTrue("Die bezeichnung bei" + listToString(fehlerLen) + "hat/haben zu wenige Zeichen: ",fehlerLen.isEmpty());
     }
 
     @Test
     public void getMaterial() {
 
+        ArrayList<Schmuck> fehler = new ArrayList<>();
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
 
         for (Schmuck schmuck : schatz) {
-            Material material = schmuck.getMaterial();
-            assertNotNull("Bei " + schmuck.getClass().getName() + " ist Material null", material);
+
+
+            if(schmuck.getMaterial() == null){
+                fehler.add(schmuck);
+            }
 
         }
+        assertTrue("Bei " + listToString(fehler) + " ist Material null", fehler.isEmpty());
+
 
     }
     @Test
-    public void edelsteineGetGewicht() {
+    public void edelsteineGetGewichtNotNull() {
 
         Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+        ArrayList<Schmuck> fehler = new ArrayList<>();
+        for (Schmuck schmuck : schatz) {
+            if(schmuck.getVerbauteEdelsteine() == null){
+                fehler.add(schmuck);
+            }
+        }
+        Assert.assertTrue("verbaute Edelsteine sind null in:" + listToString(fehler), fehler.isEmpty());
+
+    }
+    @Test
+    public void edelsteineGetGewichtslos() {
+
+        Collection<Schmuck> schatz = Schatztruhe.getSchatz();
+        ArrayList<Edelstein> fehler = new ArrayList<>();
 
         for (Schmuck schmuck : schatz) {
-            Assert.assertNotNull("verbaute Edelsteine sind null in " + schmuck.getBezeichnung(), schmuck.getVerbauteEdelsteine());
-
-            if(!schmuck.getVerbauteEdelsteine().isEmpty()) {
+            if(schmuck.getVerbauteEdelsteine() != null&&!schmuck.getVerbauteEdelsteine().isEmpty()) {
                 for (Edelstein edelstein : schmuck.getVerbauteEdelsteine()) {
-
-                    Assert.assertTrue("Der Edelstein " + edelstein.getClass().getName() + " ist gewichtslos", edelstein.getGewichtInKarat() > 0);
-
+                    if(edelstein.getGewichtInKarat() < 0){
+                        fehler.add(edelstein);
+                    }
                 }
             }
+            Assert.assertTrue("Der Edelstein " + listToStringEdel(fehler) + " ist gewichtslos", fehler.isEmpty());
         }
 
     }
