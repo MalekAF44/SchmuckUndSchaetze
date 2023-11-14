@@ -20,7 +20,7 @@ public class Schatztruhe {
     }
 
     //TODO: Diesen Wert ändern, wenn Ihr die Tests nur für bestimmte Schmuckstücke laufen lassen wollt.
-    private static final Schmuckfilter filter = Schmuckfilter.ALLES;
+    private static final Schmuckfilter filter = Schmuckfilter.NUR_RICHTIGE;
 
 
     public static Collection<Schmuck> getSchatz(){

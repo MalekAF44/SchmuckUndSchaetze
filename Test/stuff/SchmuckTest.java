@@ -16,7 +16,7 @@ public class SchmuckTest {
 
         for (Schmuck schmuck : schatz) {
             Assert.assertNotNull("Die Bezeichnung von " + schmuck.getClass().getName() + " ist null", schmuck.getBezeichnung());
-            Assert.assertTrue("Die bezeichnung bei" + schmuck.getClass().getName() + "hat zu wenige Zeichen",schmuck.getBezeichnung().length() > 3);
+            Assert.assertTrue("Die bezeichnung bei" + schmuck.getClass().getName() + " hat zu wenige Zeichen",schmuck.getBezeichnung().length() > 3);
         }
     }
 
@@ -63,7 +63,7 @@ public class SchmuckTest {
                 i += schmuck.getMaterial().getPreisProGramm() * schmuck.getMaterialGewicht();//rechnet das materialgewicht drauf
 
 
-        Assert.assertTrue("Der Schmuck " + schmuck.getClass().getName() + " ist nicht richtig",i == schmuck.getGesamtwertInEuro());
+        Assert.assertTrue("Der Schmuck " + schmuck.getClass().getName() + " ist nicht richtig: Erwartet wurde " + i + ", aber es war: " + schmuck.getGesamtwertInEuro(),i == schmuck.getGesamtwertInEuro());
 
         }
     }
@@ -107,7 +107,7 @@ public class SchmuckTest {
 
         for (Schmuck schmuck : schatz) {
             int materialGewicht = schmuck.getMaterialGewicht();
-            Assert.assertTrue("Bei " + schmuck.getClass().getName() + " ist Materialgewicht nicht positiv", materialGewicht > 0);
+            Assert.assertTrue("Bei " + schmuck.getClass().getName() + " ist das Gewicht vom Material keine positive Zahl", materialGewicht > 0);
         }
     }
 

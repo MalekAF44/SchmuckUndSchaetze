@@ -6,7 +6,7 @@ import stuff.Schmuck;
 
 import java.util.Collection;
 
-public class Armband implements Schmuck {
+public class ArmbandF implements Schmuck {
 
 
     @Override
@@ -21,8 +21,6 @@ public class Armband implements Schmuck {
 
     @Override
     public int getMaterialGewicht() {
-
-
         return 20;
     }
 

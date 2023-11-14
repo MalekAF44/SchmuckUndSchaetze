@@ -10,16 +10,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Ohrringe implements Schmuck {
-    private Material material;
-    private int materialGewicht;
-
-    public Ohrringe() {
-        this.material = Material.GOLD;
-        this.materialGewicht = 10;
-    }
-
-
-
     @Override
     public String getBezeichnung() {
         return "Ohrringe";
@@ -27,7 +17,7 @@ public class Ohrringe implements Schmuck {
 
     @Override
     public Material getMaterial() {
-        return material;
+        return Material.GOLD;
     }
 
     @Override
@@ -51,10 +41,14 @@ public class Ohrringe implements Schmuck {
 
     @Override
     public int getGesamtwertInEuro() {
-        int gesamtwert = 0;
-        for (Edelstein edelstein : getVerbauteEdelsteine()) {
-            gesamtwert += edelstein.getWert();
+        int i = 0;
+        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
+            i += edelstein.getWert();
         }
-        return gesamtwert;
+
+        Material material = getMaterial();
+        i += material.getPreisProGramm() * getMaterialGewicht();//rechnet den wert vom material oben drauf
+
+        return i;
     }
 }

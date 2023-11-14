@@ -9,34 +9,35 @@ import stuff.Schmuck;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class FabergeEi implements Schmuck {
+public class DasHeiligeBildF implements Schmuck {
 
 
     @Override
     public String getBezeichnung() {
-        return "Ei";
+        return "Das Heilige Bild";
     }
 
     @Override
     public Material getMaterial() {
-        return Material.SILBER;
+        return Material.GOLD;
     }
 
     @Override
     public int getMaterialGewicht() {
-        return 50;
+        return 100;
     }
 
     @Override
     public int getKatalognummer() {
-        return 9;
+        return -4;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
         ArrayList<Edelstein> edelsteine = new ArrayList<>();
         Onyx onyxdiamant = new Onyx();
-
+        Zenyte zenyte = new Zenyte();
+        edelsteine.add(zenyte);
         edelsteine.add(onyxdiamant);
         return edelsteine;
     }
@@ -54,4 +55,5 @@ public class FabergeEi implements Schmuck {
         return i;
     }
 }
+
 

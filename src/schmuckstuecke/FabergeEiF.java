@@ -1,7 +1,6 @@
 package schmuckstuecke;
 
 import Edelsteine.Onyx;
-import Edelsteine.Zenyte;
 import stuff.Edelstein;
 import stuff.Material;
 import stuff.Schmuck;
@@ -9,35 +8,34 @@ import stuff.Schmuck;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class DasHeiligeBild implements Schmuck {
+public class FabergeEiF implements Schmuck {
 
 
     @Override
     public String getBezeichnung() {
-        return "Das Heilige Bild";
+        return "Ei";
     }
 
     @Override
     public Material getMaterial() {
-        return Material.GOLD;
+        return Material.SILBER;
     }
 
     @Override
     public int getMaterialGewicht() {
-        return 100;
+        return 50;
     }
 
     @Override
     public int getKatalognummer() {
-        return -4;
+        return 9;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
         ArrayList<Edelstein> edelsteine = new ArrayList<>();
         Onyx onyxdiamant = new Onyx();
-        Zenyte zenyte = new Zenyte();
-        edelsteine.add(zenyte);
+
         edelsteine.add(onyxdiamant);
         return edelsteine;
     }
@@ -55,5 +53,4 @@ public class DasHeiligeBild implements Schmuck {
         return i;
     }
 }
-
 
