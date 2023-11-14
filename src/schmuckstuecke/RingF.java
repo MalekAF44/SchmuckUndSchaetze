@@ -1,7 +1,6 @@
 package schmuckstuecke;
 
 import Edelsteine.Blutdiamant;
-import Edelsteine.Onyx;
 import stuff.Edelstein;
 import stuff.Material;
 import stuff.Schmuck;
@@ -9,7 +8,7 @@ import stuff.Schmuck;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Ring implements Schmuck {
+public class RingF implements Schmuck {
 
     private double durchmesser;
 
