@@ -121,7 +121,8 @@ public class SchmuckTest {
             Assert.assertTrue("Die Katalognummer von " + schmuck.getClass().getName() + " ist negativ: " + katalognummer, katalognummer >= 0);
         }
 
-        Assert.assertTrue("Die Katalognummern sind nicht eindeutig.", KatalogNummerVergleich(schatz));
+        Assert.assertTrue("Die Katalognummer gibt es bereits.", KatalogNummerVergleich(schatz));
+
     }
     private boolean KatalogNummerVergleich(Collection<Schmuck> schatz) {
         for (Schmuck schmuck1 : schatz) {
