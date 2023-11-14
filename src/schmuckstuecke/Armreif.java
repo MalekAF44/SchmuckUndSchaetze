@@ -22,7 +22,8 @@ public class Armreif implements Schmuck {
 
     @Override
     public int getMaterialGewicht() {
-        return 3;
+
+        return 5;
     }
 
     @Override

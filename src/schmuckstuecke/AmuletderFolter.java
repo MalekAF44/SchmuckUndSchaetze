@@ -24,6 +24,7 @@ public class AmuletderFolter implements Schmuck{
 
     @Override
     public int getMaterialGewicht() {
+
         return 100;
     }
 

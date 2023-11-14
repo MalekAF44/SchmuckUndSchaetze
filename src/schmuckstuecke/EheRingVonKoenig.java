@@ -37,7 +37,8 @@ public class EheRingVonKoenig implements Schmuck {
         Edelstein stein1 = new Edelstein() {
             @Override
             public int getGewichtInKarat() {
-                return 5;
+
+                return 15;
             }
 
             @Override

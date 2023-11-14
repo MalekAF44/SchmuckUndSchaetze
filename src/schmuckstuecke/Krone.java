@@ -21,7 +21,8 @@ public class Krone implements Schmuck {
 
     @Override
     public int getMaterialGewicht() {
-        return 4;
+
+        return 120;
     }
 
     @Override
