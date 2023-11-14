@@ -26,7 +26,7 @@ public class Ring implements Schmuck {
     @Override
     public int getMaterialGewicht() {
 
-           return 50;
+           return -50;
         }
 
 
