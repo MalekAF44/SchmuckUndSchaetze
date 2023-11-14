@@ -1,6 +1,5 @@
 package schmuckstuecke;
 
-import Edelsteine.Blutdiamant;
 import Edelsteine.Onyx;
 import stuff.Edelstein;
 import stuff.Material;
@@ -9,45 +8,43 @@ import stuff.Schmuck;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Ring implements Schmuck {
+public class RahmenF implements Schmuck {
 
-    private double durchmesser;
 
     @Override
     public String getBezeichnung() {
-        return "Ring";
+        return "Sehr alter Bilderrahmen";
     }
 
     @Override
     public Material getMaterial() {
-        return Material.GOLD;
+        return Material.PLATIN;
     }
 
     @Override
     public int getMaterialGewicht() {
-
-           return -50;
-        }
-
+        return 4000;
+    }
 
     @Override
     public int getKatalognummer() {
-        return 2277;
+        return 346;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
-
         ArrayList<Edelstein> edelsteine = new ArrayList<>();
-        Blutdiamant blutdiamant = new Blutdiamant();
-        edelsteine.add(blutdiamant);
+        Onyx onyxdiamant = new Onyx();
+
+
+        edelsteine.add(onyxdiamant);
         return edelsteine;
     }
 
     @Override
     public int getGesamtwertInEuro() {
         int i = 0;
-        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
+        for (Edelstein edelstein : getVerbauteEdelsteine()) {//rechnet den Wert aller Edelsteine zusammen
             i += edelstein.getWert();
         }
 

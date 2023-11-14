@@ -9,13 +9,12 @@ import stuff.Schmuck;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Ring implements Schmuck {
+public class DokumentF implements Schmuck {
 
-    private double durchmesser;
 
     @Override
     public String getBezeichnung() {
-        return "Ring";
+        return "Dokument mit wertvollen Informationen...";
     }
 
     @Override
@@ -25,19 +24,16 @@ public class Ring implements Schmuck {
 
     @Override
     public int getMaterialGewicht() {
-
-           return -50;
-        }
-
+        return 2;
+    }
 
     @Override
     public int getKatalognummer() {
-        return 2277;
+        return 346;
     }
 
     @Override
     public Collection<Edelstein> getVerbauteEdelsteine() {
-
         ArrayList<Edelstein> edelsteine = new ArrayList<>();
         Blutdiamant blutdiamant = new Blutdiamant();
         edelsteine.add(blutdiamant);
@@ -47,7 +43,7 @@ public class Ring implements Schmuck {
     @Override
     public int getGesamtwertInEuro() {
         int i = 0;
-        for(Edelstein edelstein : getVerbauteEdelsteine()){//rechnet den Wert aller Edelsteine zusammen
+        for (Edelstein edelstein : getVerbauteEdelsteine()) {//rechnet den Wert aller Edelsteine zusammen
             i += edelstein.getWert();
         }
 
